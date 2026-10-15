@@ -1,11 +1,12 @@
 import productos from "../../datos/productos.mjs";
 
-
-export function obtenerProductos (){
+// GET todos
+export function obtenerProductos() {
     return productos
 }
-function obtenerProductos (id){
-    //Filtramos
-    const producto = productos.filter(producto => producto === id) 
-    return productos 
+
+export function obtenerProducto(id) {
+    // Filtramos
+    const producto = productos.filter(producto => producto.id === id)
+    return producto
 }

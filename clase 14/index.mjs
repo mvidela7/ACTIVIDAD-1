@@ -1,10 +1,14 @@
-import express from "express";
-import rutasModuloProductos from "./modulos/productos/productos.rutas.mjs";
+import express from 'express'
+import dotenv from 'dotenv'
+import rutasModuloProductos from './modulos/productos/productos.rutas.mjs'
 
-const PUERTO = 3000;
+dotenv.config()
 
+// console.log(process.env.PUERTO)
 
+const PUERTO = process.env.PUERTO || 3000
 
-const app = express();
+const app = express()
 app.use(rutasModuloProductos)
-app.listen(PUERTO);
+
+app.listen(PUERTO)
